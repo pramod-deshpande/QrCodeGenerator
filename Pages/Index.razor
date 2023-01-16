@@ -1,3 +1,44 @@
 ﻿@page "/"
+@using static QRCoder.PayloadGenerator;
 
-<h1>Hello, world!</h1>
+<MudText Typo="Typo.h3" Class="my-8" Align="Align.Center">Generate QR Code</MudText>
+<MudContainer Class="my-6">
+    <MudGrid Spacing="6" Justify="Justify.Center">
+        <MudItem xs="12" sm="12" md="8">
+            <MudTextField Variant="Variant.Outlined" @bind-Value="qrContent" Label="Content for qrcode"></MudTextField>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="8">
+            <MudButton OnClick="GenerateQr" Variant="Variant.Outlined" Color="Color.Primary"> <MudText>Submit</MudText></MudButton>
+        </MudItem>
+        @if (!string.IsNullOrEmpty(QRCodeStr))
+        {
+            <MudItem xs="12" sm="12" md="8">
+                <a href="@QRCodeStr" download="QR Code">
+                    <MudImage Width="300" Height="300" Src="@QRCodeStr" Alt="QR Code" Elevation="5" Class="rounded-lg" />
+                </a>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="8">
+                <MudText Typo="Typo.caption">click or tap on the image to download</MudText>
+            </MudItem>
+        }
+    </MudGrid>
+</MudContainer>
+
+
+@code {
+    string qrContent = "";
+    string QRCodeStr = string.Empty;
+
+    private void GenerateQr()
+    {
+        QRCodeStr = GenerateQRCode.GenerateQR(qrContent);
+        qrContent = string.Empty;
+    }
+
+
+
+    
+
+
+
+}

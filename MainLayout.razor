@@ -1,5 +1,45 @@
 ﻿@inherits LayoutComponentBase
 
-<main>
-    @Body
-</main>
+
+<MudThemeProvider Theme="CustomTheme"  IsDarkMode="true"/>
+<MudLayout>
+    <MudAppBar Elevation="1" Color="Color.Surface">
+        <a href="/"> <MudText Typo="Typo.h5" Color="Color.Primary" Class="ml-3">QR Gen</MudText></a>
+        <MudSpacer />
+        <MudLink Href="/contactcard" Color="Color.Secondary" Typo="Typo.body1">Contact Card</MudLink>
+    </MudAppBar>
+    <MudMainContent>
+        <MudContainer Class="py-5" MaxWidth="MaxWidth.Medium">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code{
+    MudTheme CustomTheme = new MudTheme()
+        {
+            PaletteDark = new PaletteDark()
+            {
+                AppbarBackground = "#262528",
+                Surface = "#262528",
+                Background = "#29272a",
+
+                Primary = "#72cada",
+                PrimaryLighten = "#A5FDFF",
+                PrimaryDarken = "#3F97A7",
+
+                Secondary = "#DA8272",
+                SecondaryDarken = "#A74F3F",
+                SecondaryLighten = "#FFB5A5",
+            },
+            Typography = new()
+            {
+                Default = new Default()
+                {
+                    FontFamily = new[] { "Space Mono", "monospace" }
+                },
+            }
+        };
+
+
+}
