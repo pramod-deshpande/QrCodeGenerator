@@ -9,13 +9,22 @@
     <link href="manifest.json" rel="manifest" />
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
-
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/loading.css" rel="stylesheet" />
     <!-- If you add any scoped CSS files, uncomment the following to load them
     <link href="QrCodeGenerator.styles.css" rel="stylesheet" /> -->
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">
+        <div class="container">
+            <div class="center">
+                <div class="loader">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
