@@ -2,79 +2,83 @@
 @using Microsoft.AspNetCore.Components.Forms
 @using static QRCoder.PayloadGenerator;
 
-<MudText Typo="Typo.h3" Class="my-8" Align="Align.Center">Generate Contact Card</MudText>
+<MudText Typo="Typo.h4" Class="my-10" Align="Align.Center">Generate Contact Card</MudText>
 
 <MudContainer Class="my-6">
     <EditForm Model="contactInformation" OnValidSubmit="CreateVCard">
-        <MudGrid Spacing="5" Justify="Justify.Center">
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.FirstName" Label="First Name"></MudTextField>
+        <MudGrid Spacing="6" Justify="Justify.Center">
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.FirstName" Variant="Variant.Outlined" Label="First Name"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.LastName" Label="Last Name"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.LastName" Variant="Variant.Outlined" Label="Last Name"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.NickName" Label="Nick Name"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.NickName" Variant="Variant.Outlined" Label="Nick Name"></MudTextField>
             </MudItem>
  
-              <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.Organization" Label="Organization"></MudTextField>
+              <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.Organization" Variant="Variant.Outlined" Label="Organization"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.OrgTitle" Label="Organization Title"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.OrgTitle" Variant="Variant.Outlined" Label="Organization Title"></MudTextField>
             </MudItem>
      
-              <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.Phone" Label="Phone"></MudTextField>
+              <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.Phone" Variant="Variant.Outlined" Label="Phone"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.MobilePhone" Label="Mobile Phone"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.MobilePhone" Variant="Variant.Outlined" Label="Mobile Phone"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.WorkPhone" Label="Work Phone"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.WorkPhone" Variant="Variant.Outlined" Label="Work Phone"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.Email" InputType="InputType.Email" Label="Email"></MudTextField>
+              <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.Email" Variant="Variant.Outlined" InputType="InputType.Email" Label="Email"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.Website" InputType="InputType.Url" Label="Website"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.Website" Variant="Variant.Outlined" InputType="InputType.Url" Label="Website"></MudTextField>
             </MudItem>
 
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.Street" Label="Street"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.Street" Variant="Variant.Outlined" Label="Street"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.HouseNumber" Label="House number"></MudTextField>
+              <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.HouseNumber" Variant="Variant.Outlined" Label="House number"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.City" Label="City"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.City" Variant="Variant.Outlined" Label="City"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.State" Label="State / Province"></MudTextField>
+              <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.State" Variant="Variant.Outlined" Label="State / Province"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.Zipcode" Label="Zipcode"></MudTextField>
+              <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.Zipcode" Variant="Variant.Outlined" Label="Zipcode"></MudTextField>
             </MudItem>
-            <MudItem xs="12" sm="12" md="12">
-                <MudTextField @bind-Value="contactInformation.Country" Label="Country"></MudTextField>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="contactInformation.Country" Variant="Variant.Outlined" Label="Country"></MudTextField>
             </MudItem>
-            <MudItem xs="6" sm="6" md="6">
-                <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Variant="Variant.Outlined"><MudText>Submit</MudText></MudButton>
+            <MudItem xs="6" sm="6" md="8">
+                <MudContainer Class="d-flex justify-space-between">
+                    <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Variant="Variant.Outlined" ><MudText>Submit</MudText></MudButton>
+                    <MudButton OnClick="Reset" Color="Color.Secondary" Variant="Variant.Text" ><MudText>Reset</MudText></MudButton>
+                </MudContainer>
+            
             </MudItem>
-            <MudItem xs="6" sm="6" md="6">
-                <MudButton OnClick="Reset" Color="Color.Secondary" Variant="Variant.Text"><MudText>Reset</MudText></MudButton>
-            </MudItem>
+     @*       <MudItem xs="6" sm="6" md="8">
+               
+            </MudItem>*@
         </MudGrid>
     </EditForm>
 </MudContainer>
 
-<MudContainer Class="d-flex flex-column justify-center gap-5 my-6">
+<MudContainer Class="d-flex flex-column justify-center gap-5 my-10">
     @if (!string.IsNullOrEmpty(qrImage))
     {
-        <a href="@qrImage" download="QR Code">
-            <MudImage Width="300" Height="300" Src="@qrImage" Alt="QR Code" Elevation="5" Class="rounded-lg" />
+        <a href="@qrImage" download="QR Code" style="margin-left:auto;margin-right:auto" >
+            <MudImage Width="300" Height="300" Src="@qrImage" Alt="QR Code" Elevation="5" Class="rounded-lg mx-auto" />
         </a>
-        <MudText Typo="Typo.caption">click or tap on the image to download</MudText>
+        <MudText Typo="Typo.caption" Align="Align.Center" Color="Color.Secondary">click or tap on the image to download</MudText>
     }
 </MudContainer>
 
