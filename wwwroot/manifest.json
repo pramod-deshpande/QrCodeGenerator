@@ -1,6 +1,6 @@
 {
-  "name": "QrCodeGenerator",
-  "short_name": "QrCodeGenerator",
+  "name": "QRCode Generator",
+  "short_name": "QR Generator",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
