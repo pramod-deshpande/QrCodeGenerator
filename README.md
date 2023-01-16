@@ -3,7 +3,7 @@
 
 A simple PWA made with Blazor WASM to generate a QR code for links and Contact cards. 
 QR Code image can be downloaded in .png format. 
-The contact card Qr code can add the data to the user's address book
+The contact-card Qr code can add the data to the user's address book
 
 
 ![QRCode - Link](https://user-images.githubusercontent.com/106889203/212756484-bd3a905f-97bf-42ea-8312-35fe8b45123d.png)
