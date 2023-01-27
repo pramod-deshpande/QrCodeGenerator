@@ -1,5 +1,4 @@
 ﻿using QRCoder;
-
 namespace QrCodeGenerator;
 
 public static class GenerateQRCode

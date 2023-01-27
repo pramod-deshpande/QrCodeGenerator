@@ -1,16 +1,15 @@
-﻿
-@inherits LayoutComponentBase
+﻿@inherits LayoutComponentBase
 
 
-<MudThemeProvider Theme="CustomTheme"  IsDarkMode="true"/>
+<MudThemeProvider Theme="CustomTheme" IsDarkMode="true" />
 <MudLayout>
-    <MudAppBar Elevation="1" Color="Color.Surface">
+    <MudAppBar Elevation="1" Color="Color.Surface" Class="border-dashed border-b-2">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         <MudSpacer />
         <a href="/"> <MudText Typo="Typo.body1" Color="Color.Primary" Class="ml-3">Generate QR Code</MudText></a>
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="1">
-        <NavMenu/>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="1" Class="border-dashed border-r-2">
+        <NavMenu />
     </MudDrawer>
     <MudMainContent>
         <MudContainer Class="py-5" MaxWidth="MaxWidth.Medium">
@@ -19,7 +18,7 @@
     </MudMainContent>
 </MudLayout>
 
-@code{
+@code {
     bool _drawerOpen = true;
 
     void DrawerToggle()

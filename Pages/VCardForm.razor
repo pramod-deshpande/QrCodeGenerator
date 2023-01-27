@@ -1,6 +1,5 @@
 ﻿@page "/contactcard"
-@using Microsoft.AspNetCore.Components.Forms
-@using static QRCoder.PayloadGenerator;
+
 
 <PageTitle>Contact Card QR </PageTitle>
 <PageHeading Title="Contact Card QR "></PageHeading>
@@ -17,15 +16,15 @@
             <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.NickName" Variant="Variant.Outlined" Label="Nick Name"></MudTextField>
             </MudItem>
- 
-              <MudItem xs="12" sm="12" md="8">
+
+            <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.Organization" Variant="Variant.Outlined" Label="Organization"></MudTextField>
             </MudItem>
             <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.OrgTitle" Variant="Variant.Outlined" Label="Organization Title"></MudTextField>
             </MudItem>
-     
-              <MudItem xs="12" sm="12" md="8">
+
+            <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.Phone" Variant="Variant.Outlined" Label="Phone"></MudTextField>
             </MudItem>
             <MudItem xs="12" sm="12" md="8">
@@ -34,7 +33,7 @@
             <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.WorkPhone" Variant="Variant.Outlined" Label="Work Phone"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="8">
+            <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.Email" Variant="Variant.Outlined" InputType="InputType.Email" Label="Email"></MudTextField>
             </MudItem>
             <MudItem xs="12" sm="12" md="8">
@@ -44,16 +43,16 @@
             <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.Street" Variant="Variant.Outlined" Label="Street"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="8">
+            <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.HouseNumber" Variant="Variant.Outlined" Label="House number"></MudTextField>
             </MudItem>
             <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.City" Variant="Variant.Outlined" Label="City"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="8">
+            <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.State" Variant="Variant.Outlined" Label="State / Province"></MudTextField>
             </MudItem>
-              <MudItem xs="12" sm="12" md="8">
+            <MudItem xs="12" sm="12" md="8">
                 <MudTextField @bind-Value="contactInformation.Zipcode" Variant="Variant.Outlined" Label="Zipcode"></MudTextField>
             </MudItem>
             <MudItem xs="12" sm="12" md="8">
@@ -61,13 +60,13 @@
             </MudItem>
             <MudItem xs="12" sm="12" md="8">
                 <MudContainer Class="d-flex justify-space-between">
-                    <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Variant="Variant.Outlined" ><MudText>Submit</MudText></MudButton>
-                    <MudButton OnClick="Reset" Color="Color.Secondary" Variant="Variant.Text" ><MudText>Reset</MudText></MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Variant="Variant.Outlined"><MudText>Submit</MudText></MudButton>
+                    <MudButton OnClick="Reset" Color="Color.Secondary" Variant="Variant.Text"><MudText>Reset</MudText></MudButton>
                 </MudContainer>
-            
+
             </MudItem>
-     @*       <MudItem xs="6" sm="6" md="8">
-               
+            @*       <MudItem xs="6" sm="6" md="8">
+
             </MudItem>*@
         </MudGrid>
     </EditForm>
@@ -76,7 +75,7 @@
 <MudContainer Class="d-flex flex-column justify-center gap-5 my-10">
     @if (!string.IsNullOrEmpty(qrImage))
     {
-        <a href="@qrImage" download="QR Code" style="margin-left:auto;margin-right:auto" >
+        <a href="@qrImage" download="QR Code" style="margin-left:auto;margin-right:auto">
             <MudImage Width="300" Height="300" Src="@qrImage" Alt="QR Code" Elevation="5" Class="rounded-lg mx-auto" />
         </a>
         <MudText Typo="Typo.caption" Align="Align.Center" Color="Color.Secondary">click or tap on the image to download</MudText>
@@ -91,22 +90,22 @@
     {
         ContactData generator = new ContactData(
             ContactData.ContactOutputType.VCard3,
-            firstname:contactInformation.FirstName,
-            lastname:contactInformation.LastName,
-            nickname:contactInformation.NickName,
-            org:contactInformation.Organization,
-            orgTitle:contactInformation.OrgTitle,
-            phone:contactInformation.Phone,
-            workPhone:contactInformation.WorkPhone,
-            mobilePhone:contactInformation.MobilePhone,
+            firstname: contactInformation.FirstName,
+            lastname: contactInformation.LastName,
+            nickname: contactInformation.NickName,
+            org: contactInformation.Organization,
+            orgTitle: contactInformation.OrgTitle,
+            phone: contactInformation.Phone,
+            workPhone: contactInformation.WorkPhone,
+            mobilePhone: contactInformation.MobilePhone,
             email: contactInformation.Email,
             website: contactInformation.Website,
             street: contactInformation.Street,
-            houseNumber:contactInformation.HouseNumber,
+            houseNumber: contactInformation.HouseNumber,
             city: contactInformation.City,
             stateRegion: contactInformation.State,
-            zipCode:contactInformation.Zipcode,
-            country:contactInformation.Country
+            zipCode: contactInformation.Zipcode,
+            country: contactInformation.Country
         );
         string payload = generator.ToString();
         qrImage = GenerateQRCode.GenerateQR(payload);

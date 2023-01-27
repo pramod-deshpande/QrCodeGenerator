@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace QrCodeGenerator;
+namespace QrCodeGenerator.Models;
 
 public class ContactInformation
 {
