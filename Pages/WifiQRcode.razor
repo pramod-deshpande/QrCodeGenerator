@@ -1,0 +1,49 @@
+﻿@page "/wifi-qrcode"
+@using Microsoft.AspNetCore.Components.Forms;
+@using static QRCoder.PayloadGenerator;
+
+<MudContainer Class="my-6">
+    <EditForm Model="wifiInfo" OnValidSubmit=CreateWifiQR>
+        <MudGrid Spacing="6" Justify="Justify.Center">
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="wifiInfo.SSID" Variant="Variant.Outlined" Label="SSID"></MudTextField>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="8">
+                <MudTextField @bind-Value="wifiInfo.Password" Variant="Variant.Outlined" Label="Password"></MudTextField>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="8">
+                <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Variant="Variant.Outlined"><MudText>Submit</MudText></MudButton>
+            </MudItem>
+        </MudGrid>
+    </EditForm>
+</MudContainer>
+
+
+<MudContainer Class="d-flex flex-column justify-center gap-5 my-10">
+    @if (!string.IsNullOrEmpty(qrImage))
+    {
+        <a href="@qrImage" download="QR Code" style="margin-left:auto;margin-right:auto">
+            <MudImage Width="300" Height="300" Src="@qrImage" Alt="QR Code" Elevation="5" Class="rounded-lg mx-auto" />
+        </a>
+        <MudText Typo="Typo.caption" Align="Align.Center" Color="Color.Secondary">click or tap on the image to download</MudText>
+    }
+</MudContainer>
+
+
+
+
+@code {
+
+    WifiInformation wifiInfo = new();
+    string qrImage = string.Empty;
+
+    private void CreateWifiQR()
+    {
+        WiFi generator = new WiFi(wifiInfo.SSID, wifiInfo.Password, WiFi.Authentication.WPA);
+        var payload = generator.ToString();
+        qrImage = GenerateQRCode.GenerateQR(payload);
+        wifiInfo = new();
+        StateHasChanged();
+    }
+
+}
